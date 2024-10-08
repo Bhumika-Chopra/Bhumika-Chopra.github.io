@@ -2,7 +2,7 @@
 
 <h2> Hi, I'm Bhumika! <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="50"></h2>
 <img align='right' src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjN4ZWw3dGo0YjJ2aTJoNTlic2I3OG44dmthbDc1cTVmamF5bndxaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dWxO36Jzd6bTSt5dIY/giphy.gif" width="230">
-<p><em>Software Enginner at <a href="https://www.mavensecurities.com/">Maven Securities</a><img src="https://media.tenor.com/BoDofDkAurYAAAAC/peachcry-peachmad.gif" width="30">
+<p><em>Software Enginner at <a href="https://www.mavensecurities.com/">Maven Securities</a><img src="https://media.tenor.com/BoDofDkAurYAAAAC/peachcry-peachmad.gif" width="40">
 </em></p>
 
 [![Linkedin: bhumika-chopra](https://img.shields.io/badge/-thaianebraga-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thaianebraga/)](https://www.linkedin.com/in/bhumika-chopra-740717165//)
@@ -17,8 +17,9 @@ const thai = {
   languages: [C++, Python, C#, Java, Julia, MATLAB, HTML, CSS,],
   architecture: ["design system pattern", "low latency development", "financial maths"],
   techCommunities: {
-                        mentor: "GirlsWhoCode"
-                      },
+                        mentor: "GirlsWhoCode",
+                        mentor: "TechLadies",
+                    },
  challenge: "Solve a GeeksForGeeks POTD each day!"
 }
 ```
