@@ -6,7 +6,6 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
-    const [loading, setLoading] = useState(false);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -16,10 +15,8 @@ const Contact = () => {
             return;
         }
 
-        setLoading(true);
-
         // Construct the mailto link
-        const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        const mailtoLink = `mailto:bhumika.chicago@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
             `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
         )}`;
 
@@ -86,7 +83,7 @@ const Contact = () => {
                     </div>
 
                     <button type="submit" className="btn">
-                        {loading ? "Sending..." : "Send Message"}
+                        "Send Message"
                     </button>
                 </form>
             </div>
