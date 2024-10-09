@@ -83,7 +83,7 @@ const Contact = () => {
                     </div>
 
                     <button type="submit" className="btn">
-                        "Send Message"
+                        Send Message
                     </button>
                 </form>
             </div>
