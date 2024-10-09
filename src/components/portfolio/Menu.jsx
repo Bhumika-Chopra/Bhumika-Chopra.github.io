@@ -1,39 +1,36 @@
-import Work1 from "../../assets/native-jobs.png";
-import Work2 from "../../assets/cryptoverse.png";
-import Work3 from "../../assets/travel.png";
-import Work4 from "../../assets/blog-1.svg";
+import Work1 from "../../assets/parkinsons.svg";
+import Work2 from "../../assets/csc.jpg";
+import Work3 from "../../assets/col764.svg";
+import Work4 from "../../assets/scheduling.svg";
 
 const Menu = [
 	{
 		id: 1,
 		image: Work1,
-		title: "React Native Jobs App",
-		category: ["Frontend", "React"],
-		repositoryUrl: "https://github.com/GregSithole/react-native-jobs"
+		title: "Parkinson's Disease Classification",
+		category: ["Deep Learning", "PyTorch"],
+		repositoryUrl: "https://github.com/Bhumika-Chopra/Parkinson-s-disease-Classification/tree/main"
 	},
 	{
 		id: 2,
 		image: Work2,
-		title: "Cryptoverse",
-		category: ["Frontend", "React"],
-		url: "https://cryptoverse.gregsithole.com",
-		repositoryUrl: "https://github.com/GregSithole/crypto-app"
+		title: "Dynamic Seat Allocation System",
+		category: ["Python"],
+		repositoryUrl: "https://github.com/Bhumika-Chopra/DISA"
 	},
 	{
 		id: 3,
 		image: Work3,
-		title: "Travel Advisor",
-		category: ["Frontend"],
-		url: "https://travel.gregsithole.com",
-		repositoryUrl: "https://github.com/GregSithole/travel-advisor"
+		title: "Information Retrieval System",
+		category: ["Data Mining", "Python"],
+		repositoryUrl: "https://github.com/Bhumika-Chopra/Information-Retrieval-A1"
 	},
 	{
 		id: 4,
 		image: Work4,
-		title: "Wallhaven CLI",
-		category: ["Backend"],
-		url: "https://www.npmjs.com/package/wallhaven-cli",
-		repositoryUrl: "https://github.com/GregSithole/wallhaven-cli"
+		title: "Efficient Process Scheduler",
+		category: ["Java", "Data Structures & Algorithms", "CMake"],
+		repositoryUrl: "https://github.com/Bhumika-Chopra/Efficient-process-scheduler"
 	}
 ];
 
