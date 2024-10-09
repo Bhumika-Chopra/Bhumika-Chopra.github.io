@@ -1,50 +1,30 @@
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import emailjs from "@emailjs/browser";
+import "./Contact.css";  // Assuming you have your CSS for theming
 
-import "./Contact.css";
-import "react-toastify/dist/ReactToastify.css";
-
-const Contact = (props) => {
+const Contact = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const submitHandler = async (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
+
         if (!name || !email || !subject || !message) {
-            return toast.error("Please complete the form above");
+            alert("Please complete the form.");
+            return;
         }
 
         setLoading(true);
 
-        const data = {
-            name,
-            email,
-            subject,
-            message,
-        };
+        // Construct the mailto link
+        const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`;
 
-        emailjs
-            .send(
-                process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                data,
-                process.env.REACT_APP_EMAILJS_PUBLIC_API
-            )
-            .then(
-                (result) => {
-                    setLoading(false);
-                    toast.success(`Successfully sent email.`);
-                },
-                (error) => {
-                    setLoading(false);
-                    console.log(error);
-                    toast.error(error.text);
-                }
-            );
+        // Open the default mail client with the pre-filled email
+        window.location.href = mailtoLink;
     };
 
     return (
@@ -66,6 +46,7 @@ const Contact = (props) => {
                                 type="text"
                                 className="contact__form-input"
                                 placeholder="Insert your name"
+                                value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </div>
@@ -75,6 +56,7 @@ const Contact = (props) => {
                                 type="email"
                                 className="contact__form-input"
                                 placeholder="Insert your email"
+                                value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
@@ -85,6 +67,7 @@ const Contact = (props) => {
                             type="text"
                             className="contact__form-input"
                             placeholder="Insert your subject"
+                            value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                         />
                     </div>
@@ -97,6 +80,7 @@ const Contact = (props) => {
                             rows="10"
                             className="contact__form-input"
                             placeholder="Write your message"
+                            value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         ></textarea>
                     </div>
@@ -105,7 +89,6 @@ const Contact = (props) => {
                         {loading ? "Sending..." : "Send Message"}
                     </button>
                 </form>
-                <ToastContainer position="bottom-right" theme={props.theme} />
             </div>
         </section>
     );
