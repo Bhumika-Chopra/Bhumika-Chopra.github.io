@@ -15,7 +15,7 @@ const Menu = [
 	{
 		id: 2,
 		image: Work5,
-		title: "Deep Neural Network Approximation for Image Denoisingn",
+		title: "Deep Neural Network Approximation for Image Denoising",
 		category: ["Deep Learning", "Functional Analysis"],
 		repositoryUrl: "https://github.com/Bhumika-Chopra/BTP/"
 	},
