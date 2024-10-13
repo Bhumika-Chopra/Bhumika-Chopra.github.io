@@ -1,7 +1,8 @@
-import Work1 from "../../assets/parkinsons.svg";
+import Work1 from "../../assets/parkinsons.png";
 import Work2 from "../../assets/csc.jpg";
-import Work3 from "../../assets/col764.svg";
-import Work4 from "../../assets/scheduling.svg";
+import Work3 from "../../assets/col764.png";
+import Work4 from "../../assets/scheduling.png";
+import Work5 from "../../assets/btp.png"
 
 const Menu = [
 	{
@@ -13,20 +14,27 @@ const Menu = [
 	},
 	{
 		id: 2,
+		image: Work5,
+		title: "Deep Neural Network Approximation for Image Denoisingn",
+		category: ["Deep Learning", "Functional Analysis"],
+		repositoryUrl: "https://github.com/Bhumika-Chopra/BTP/"
+	},
+	{
+		id: 3,
 		image: Work2,
 		title: "Dynamic Seat Allocation System",
 		category: ["Python"],
 		repositoryUrl: "https://github.com/Bhumika-Chopra/DISA"
 	},
 	{
-		id: 3,
+		id: 4,
 		image: Work3,
 		title: "Information Retrieval System",
 		category: ["Data Mining", "Python"],
 		repositoryUrl: "https://github.com/Bhumika-Chopra/Information-Retrieval-A1"
 	},
 	{
-		id: 4,
+		id: 5,
 		image: Work4,
 		title: "Efficient Process Scheduler",
 		category: ["Java", "Data Structures & Algorithms", "CMake"],

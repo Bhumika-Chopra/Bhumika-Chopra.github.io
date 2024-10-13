@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";  // Assuming you have your CSS for theming
+import Image from "../../assets/avatar-2.svg"
 
 const Contact = () => {
     const [name, setName] = useState("");

@@ -1,12 +1,13 @@
 import React from 'react';
 import './About.css';
-import Image from '../../assets/avatar-2.svg';
+import Image from '../../assets/sunset.png';
 import cplusplus from '../../assets/programming language logos/c++.svg'
 import python from '../../assets/programming language logos/python.svg'
 import julia from '../../assets/programming language logos/julia.svg'
 import js from '../../assets/programming language logos/js.svg'
 import c from '../../assets/programming language logos/c.svg'
 import java from '../../assets/programming language logos/java.svg'
+import csharp from '../../assets/programming language logos/c#.png'
 import Resume from '../../assets/resume.pdf';
 import AboutBox from './AboutBox';
 
@@ -33,16 +34,18 @@ const About = () => {
                             I thrive in fast-paced environments that push the boundaries of what's possible with software.
                             I am always seeking new learning opportunities and challenges that stretch my skills.
                             My current focus these days is on expanding my portfolio by building more projects that I can add on here, as well as growing as an engineer.<br /><br />
-                            Here are a few technologies I’ve been working with recently:
+                            Here are a few languages I’ve been working with recently:
                         </p>
-                        <ul className="about__list">
-                            <li><img src={cplusplus} alt="C++" className='about__img' width='40'/></li>
-                            <li><img src={c} alt="C" className='about__img' width='40'/></li>
-                            <li><img src={python} alt="Python" className='about__img' width='40'/></li>
-                            <li><img src={julia} alt="Julia" className='about__img' width='40'/></li>
-                            <li><img src={js} alt="JavaScript" className='about__img' width='40'/></li>
-                            <li><img src={java} alt="Java" className='about__img' width='50'/></li>
-                        </ul>
+                        <center>
+                            <img src={cplusplus} alt="C++" className='about__img' width='40'/> &nbsp;&nbsp;
+                            <img src={c} alt="C" className='about__img' width='40'/>&nbsp;&nbsp;
+                            {/* <img src={csharp} alt="C#" className='about__img' width='40'/>&nbsp;&nbsp; */}
+                            <img src={js} alt="JavaScript" className='about__img' width='40'/>&nbsp;&nbsp;
+                            <img src={python} alt="Python" className='about__img' width='40'/>&nbsp;&nbsp;
+                            <img src={julia} alt="Julia" className='about__img' width='40'/>&nbsp;&nbsp;
+                            <img src={java} alt="Java" className='about__img' width='50'/>&nbsp;&nbsp;
+                        <br></br>
+                        </center>
                         <button className="btn" onClick={downloadResume}>Download CV</button>
                     </div>
 
