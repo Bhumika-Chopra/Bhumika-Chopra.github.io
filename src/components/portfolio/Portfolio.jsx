@@ -33,9 +33,6 @@ const Portfolio = () => {
 
 							<span className="portfolio__category">{category.join(', ')}</span>
 							<h3 className="portfolio__title">{title}</h3>
-							<a href={url} target="_blank" rel="noreferrer" className="portfolio__button">
-								<RiLink className="portfolio__button-icon" />
-							</a>
 							<a href={repositoryUrl} target="_blank" rel="noreferrer" className="portfolio__github-button">
 								<RiGithubLine className="portfolio__button-icon" />
 							</a>

@@ -8,7 +8,7 @@ const Menu = [
 	{
 		id: 1,
 		image: Work1,
-		title: "Parkinson's Disease Classification",
+		title: "Parkinson's Disease Detection",
 		category: ["Deep Learning", "PyTorch"],
 		repositoryUrl: "https://github.com/Bhumika-Chopra/Parkinson-s-disease-Classification/tree/main"
 	},
