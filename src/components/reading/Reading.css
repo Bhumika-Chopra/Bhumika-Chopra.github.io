@@ -1,9 +1,9 @@
-.reading__intro { margin: -1.25rem 0 2rem; }
+.reading__intro { margin: 0 0 28px; }
 .reading__shelf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
 .reading__book { min-width: 0; }
-.reading__cover { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem; text-align: center; min-height: 285px; padding: 1.8rem 1.25rem; border-radius: 4px 14px 14px 4px; box-shadow: inset 7px 0 0 rgb(0 0 0 / 20%), var(--shadow); border: 1px solid rgb(229 231 235 / 20%); color: #e5e7eb; background: #172238; transition: transform 300ms cubic-bezier(.2,.8,.2,1); }
+.reading__cover { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem; text-align: center; min-height: 285px; padding: 1.8rem 1.25rem; border-radius: 4px 14px 14px 4px; box-shadow: inset 7px 0 0 rgb(0 0 0 / 20%), var(--shadow); border: 1px solid rgb(229 231 235 / 20%); color: #e5e7eb; background: #172238; transition: transform 150ms ease-out; }
 .reading__cover::before { content: ''; position: absolute; inset: 12px 12px 12px 18px; border: 1px solid rgb(229 231 235 / 25%); border-radius: 2px 8px 8px 2px; pointer-events: none; }
-.reading__cover:hover, .reading__cover:focus-visible { transform: translateY(-7px) rotate(-1deg); }
+.reading__cover:hover, .reading__cover:focus-visible { transform: translateY(-3px); }
 .reading__cover h3 { font-family: Georgia, serif; font-size: 1.6rem; color: inherit; line-height: 1.2; }
 .reading__author { font-size: .75rem; letter-spacing: .04em; }
 .reading__motif { font-size: 2.4rem; line-height: 1; opacity: .85; }
@@ -16,3 +16,5 @@
 .reading__recommend { display: inline-block; margin-top: 2rem; font-size: .9rem; }
 @media (max-width: 850px) { .reading__shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 420px) { .reading__shelf { gap: 1rem; } .reading__cover { min-height: 245px; padding: 1.5rem 1rem; } .reading__cover h3 { font-size: 1.3rem; } .reading__author { font-size: .65rem; } }
+
+@media (max-width: 360px) { .reading__shelf { grid-template-columns: 1fr; } .reading__cover { min-height: 270px; } }

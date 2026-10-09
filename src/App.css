@@ -1,9 +1,2 @@
-.main {
-  margin-left: 110px;
-}
-
-@media screen and (max-width: 1024px) {
-  .main {
-    margin-left: 0;
-  }
-}
+.main { margin-left: var(--rail-width); }
+@media (max-width: 1024px) { .main { margin-left: 0; } }

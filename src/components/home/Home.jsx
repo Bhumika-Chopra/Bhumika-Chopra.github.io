@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.css';
-import Me from '../../assets/avatar-me.svg';
+import Me from '../../assets/avatar-me.webp';
 import HeaderSocials from './HeaderSocials';
 import ScrollDown from './ScrollDown';
-import Shapes from './Shapes';
+
 
 const Home = () => {
     return (
@@ -23,7 +23,7 @@ const Home = () => {
                 <ScrollDown />
             </div>
 
-            <Shapes />
+
         </section>
     )
 }

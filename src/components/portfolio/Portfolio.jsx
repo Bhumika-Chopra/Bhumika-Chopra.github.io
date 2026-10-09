@@ -5,6 +5,7 @@ const Project = ({ title, description, category, repositoryUrl, image, id }) => 
   const [open, setOpen] = useState(false);
   return (
     <article className={`portfolio__card${open ? ' is-open' : ''}`}>
+      <div className="portfolio__body">
       <div className="portfolio__visual">
         <img src={image} alt="" loading="lazy" />
         <span className="portfolio__number">0{id}</span>
@@ -13,6 +14,7 @@ const Project = ({ title, description, category, repositoryUrl, image, id }) => 
         <span className="portfolio__category">{category.join(' · ')}</span>
         <p>{description}</p>
         <a href={repositoryUrl} target="_blank" rel="noreferrer" aria-label={`View ${title} on GitHub`}>View repository ↗</a>
+      </div>
       </div>
       <div className="portfolio__caption">
         <h3>{title}</h3>

@@ -28,7 +28,7 @@ Deployment publishes the production build to this repository's `gh-pages` branch
 
 ## Theme
 
-One `data-theme` attribute on the document root controls all colors. The initial theme loads before React renders, and theme changes use a whole-page crossfade where supported, with an atomic fallback. Reduced-motion preferences disable transitions and decorative animation. Colors use shared tokens in `src/index.css`.
+One `data-theme` attribute on the document root controls all colors. The initial theme loads before React renders, and theme changes use a short shared palette transition, with an atomic fallback. Reduced-motion preferences disable transitions and decorative animation. Colors use shared tokens in `src/index.css`.
 
 Career updates follow the supplied biography because LinkedIn blocked automated access. Public project links and descriptions were checked against the GitHub API. The existing PDF resume was not refreshed; the website links to LinkedIn instead.
 

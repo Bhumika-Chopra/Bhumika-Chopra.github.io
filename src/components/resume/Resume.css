@@ -9,4 +9,4 @@
 .resume__entry h3 { margin: .4rem 0; }
 .resume__role { font-weight: 600; font-size: .85rem; margin-bottom: .8rem; }
 .resume__entry p:last-child { font-size: .9rem; }
-@media (max-width: 700px) { .resume__columns { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .resume__columns { grid-template-columns: 1fr; } }

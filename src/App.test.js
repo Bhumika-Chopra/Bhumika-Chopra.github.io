@@ -53,15 +53,15 @@ test('career columns contain only the requested entries and projects stay at six
   expect(reveal).toHaveAttribute('aria-expanded', 'false');
 });
 
-test('theme uses a whole-page transition when available and respects reduced motion', () => {
+test('theme updates without starting a blocking whole-page snapshot', () => {
   document.startViewTransition = jest.fn(callback => { callback(); return { skipTransition: jest.fn() }; });
   render(<App />);
   fireEvent.click(screen.getByRole('button', { name: 'Switch to dark theme' }));
-  expect(document.startViewTransition).toHaveBeenCalledTimes(1);
+  expect(document.startViewTransition).not.toHaveBeenCalled();
   expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
   window.matchMedia.mockReturnValue({ matches: true });
   fireEvent.click(screen.getByRole('button', { name: 'Switch to light theme' }));
-  expect(document.startViewTransition).toHaveBeenCalledTimes(1);
+  expect(document.startViewTransition).not.toHaveBeenCalled();
   expect(document.documentElement).toHaveAttribute('data-theme', 'light');
   delete document.startViewTransition;
 });

@@ -1,211 +1,49 @@
-/*=============== Google Fonts ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
+@property --first-color { syntax: "<color>"; inherits: true; initial-value: #315fa8; }
+@property --title-color { syntax: "<color>"; inherits: true; initial-value: #111827; }
+@property --text-color { syntax: "<color>"; inherits: true; initial-value: #475569; }
+@property --body-color { syntax: "<color>"; inherits: true; initial-value: #f8fafc; }
+@property --container-color { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
+@property --border-color { syntax: "<color>"; inherits: true; initial-value: #dbe3ee; }
+@property --muted-color { syntax: "<color>"; inherits: true; initial-value: #64748b; }
+@property --surface-color { syntax: "<color>"; inherits: true; initial-value: #eef2f7; }
+@property --button-text { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
 
 :root {
-  --first-color: #315fa8;
-  --title-color: #111827;
-  --text-color: #475569;
-  --body-color: #f8fafc;
-  --container-color: #ffffff;
-  --border-color: #dbe3ee;
-  --muted-color: #64748b;
-  --surface-color: #eef2f7;
-  --button-text: #ffffff;
-  --motion: 0.3s ease;
-
-  /*=============== Font and Typohraphy ===============*/
-  --body-font: "Noto Sans", sans-serif;
-  --h1-font-size: 2.25rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-  --smaller-font-size: 0.813rem;
-
-  /*=============== Font Weight ===============*/
-  --font-medium: 500;
-  --font-semibold: 600;
-  --font-bold: 700;
-
-  /*=============== Box Shadow ===============*/
-  --shadow: 0px 5px 20px 0px rgb(69 67 96 / 10%);
-
-  /*=============== Border Radius ===============*/
-  --border-radius: 20px;
+  --first-color: #315fa8; --title-color: #111827; --text-color: #475569;
+  --body-color: #f8fafc; --container-color: #fff; --border-color: #dbe3ee;
+  --muted-color: #64748b; --surface-color: #eef2f7; --button-text: #fff;
+  --body-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --h1-font-size: clamp(1.7rem, 3vw, 2.25rem); --h2-font-size: 1.5rem; --h3-font-size: 1.2rem;
+  --normal-font-size: 1rem; --small-font-size: .875rem; --smaller-font-size: .8rem;
+  --font-medium: 500; --font-semibold: 600; --font-bold: 700;
+  --shadow: 0 4px 16px rgb(17 24 39 / 6%); --border-radius: 20px;
+  --rail-width: 88px; --header-height: 68px;
 }
-
 [data-theme="dark"] {
-  color-scheme: dark;
-  --first-color: #93b4f4;
-  --title-color: #e5e7eb;
-  --text-color: #cbd5e1;
-  --body-color: #0b0f19;
-  --container-color: #111827;
-  --surface-color: #1f2937;
-  --muted-color: #9ca3af;
-  --border-color: #374151;
-  --button-text: #0b0f19;
-  --shadow: 0 5px 20px rgb(0 0 0 / 20%);
+  color-scheme: dark; --first-color: #93b4f4; --title-color: #e5e7eb; --text-color: #cbd5e1;
+  --body-color: #0b0f19; --container-color: #111827; --surface-color: #1f2937;
+  --muted-color: #9ca3af; --border-color: #374151; --button-text: #0b0f19;
+  --shadow: 0 4px 16px rgb(0 0 0 / 12%);
 }
+html { color-scheme: light; scroll-behavior: smooth; scroll-padding-top: 32px; transition: --first-color 160ms ease-out, --title-color 160ms ease-out, --text-color 160ms ease-out, --body-color 160ms ease-out, --container-color 160ms ease-out, --border-color 160ms ease-out, --muted-color 160ms ease-out, --surface-color 160ms ease-out, --button-text 160ms ease-out; }
 
-/*=============== Responsive Typohraphy ===============*/
-@media screen and (max-width: 1024px) {
-  :root {
-    --h1-font-size: 1.75rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: 0.9rem;
-    --small-font-size: 0.813rem;
-    --smaller-font-size: 0.75rem;
-  }
-}
-
-/*=============== Base ===============*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body,
-button,
-input,
-textarea {
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-}
-
-body {
-  line-height: 1.7;
-}
-
-main {
-  background-color: var(--body-color);
-  color: var(--text-color);
-}
-
-h1,
-h2,
-h3 {
-  color: var(--title-color);
-  font-weight: var(--font-semibold);
-  line-height: 1.2;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
-
-/*=============== Resusable CSS Classes ===============*/
-
-.container {
-  max-width: 1080px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-}
-
-.section {
-  padding-top: 7rem;
-  padding-bottom: 2rem;
-}
-
-.section__title {
-  font-size: var(--h1-font-size);
-  margin-left: 0.875rem;
-  font-weight: var(--font-bold);
-  position: relative;
-  margin-bottom: 3.75rem;
-}
-
-.section__title::before {
-  content: "";
-  background: url(./assets/dots-bg.svg);
-  height: 2.25rem;
-  width: 2.25rem;
-  position: absolute;
-  left: -0.875rem;
-  top: -0.875rem;
-}
-
-[data-theme="dark"] .section__title::before {
-  content: "";
-  background: url(./assets/dots-bg-dark.svg);
-  height: 2.25rem;
-  width: 2.25rem;
-  position: absolute;
-  left: -0.875rem;
-  top: -0.875rem;
-}
-
-.btn {
-  padding: 0.75rem 2rem;
-  line-height: 1;
-  border-radius: 1.875rem;
-  box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-  border: 1px solid transparent;
-  color: var(--button-text);
-  display: inline-block;
-  background-color: var(--first-color);
-  font-weight: var(--font-bold);
-}
-
-@keyframes button-push {
-  50% {
-    transform: scale(0.8);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.btn:hover {
-  animation: button-push 0.3s linear 1;
-}
-
-
-/* Colors change atomically; the browser blends whole-page snapshots on theme switches. */
-body, .app { background-color: var(--body-color); color: var(--text-color); }
-html { color-scheme: light; scroll-padding-top: 2rem; }
-a { color: var(--first-color); }
-:focus-visible { outline: 2px solid var(--first-color); outline-offset: 5px; }
-input::placeholder, textarea::placeholder { color: var(--muted-color); opacity: 1; }
-.btn { transition: transform 240ms cubic-bezier(.2,.8,.2,1), box-shadow 240ms ease; }
-.btn:hover { animation: none; transform: translateY(-3px); box-shadow: var(--shadow); }
-::view-transition-old(root) { animation: theme-out 420ms ease both; }
-::view-transition-new(root) { animation: theme-in 420ms ease both; }
-@keyframes theme-out { to { opacity: 0; } }
-@keyframes theme-in { from { opacity: 0; } }
-.section__title::before { background: none; content: '✧'; color: var(--first-color); font-size: 2rem; top: -1.1rem; }
-[data-theme="dark"] .section__title::before { background: none; }
-.section__title { margin-bottom: 2.75rem; letter-spacing: -.035em; }
-.section { padding-top: 6rem; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; animation: none !important; }
-}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+body, .app, main { background: var(--body-color); color: var(--text-color); }
+body { font-family: var(--body-font); font-size: 1rem; line-height: 1.65; }
+button, input, textarea { font: inherit; }
+h1, h2, h3 { color: var(--title-color); font-weight: 650; line-height: 1.25; text-wrap: balance; }
+a { color: var(--first-color); text-decoration: none; }
+button { cursor: pointer; border: 0; background: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; vertical-align: middle; }
+:focus-visible { outline: 2px solid var(--first-color); outline-offset: 4px; }
+.container { width: min(100%, 1120px); margin-inline: auto; padding-inline: clamp(24px, 4vw, 48px); }
+.grid { display: grid; }
+.section { padding-block: clamp(40px, 5vw, 72px); scroll-margin-top: 24px; }
+.section__title { display: flex; align-items: baseline; gap: 12px; font-size: var(--h1-font-size); letter-spacing: -.025em; margin: 0 0 24px; }
+.section__title::before { content: '✧'; flex: 0 0 auto; color: var(--first-color); font-size: .85em; }
+.btn { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 12px 26px; border-radius: 99px; background: var(--first-color); color: var(--button-text); font-weight: 650; transition: transform 150ms ease-out; }
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); } }
+@media (max-width: 1024px) { html { scroll-padding-top: calc(var(--header-height) + 24px); } .section { scroll-margin-top: 0; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }

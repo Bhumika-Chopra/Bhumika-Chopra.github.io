@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Sidebar.css';
-import LightLogo from '../../assets/avatar-2.svg';
+
 import {
   RiHome2Line, RiUser3Line, RiBriefcase2Line, RiStackLine,
   RiBookOpenLine, RiChat3Line, RiMoonLine, RiSunLine, RiMenu2Line,
@@ -21,32 +21,22 @@ const Sidebar = ({ theme, switchTheme }) => {
   const menuButton = useRef(null);
 
   useEffect(() => {
-    let frame = null;
-    const update = () => {
-      frame = null;
-      // Select the section crossing the upper third of the viewport.
-      // This works for sections taller than the viewport as well as short ones.
-      const marker = window.innerHeight * 0.35;
-      let current = 'home';
+    if (!window.IntersectionObserver) return;
+    let observer;
+    const observe = () => {
+      observer?.disconnect();
+      observer = new window.IntersectionObserver(entries => {
+        const visible = entries.filter(entry => entry.isIntersecting);
+        if (visible.length) setActive(visible[visible.length - 1].target.id);
+      }, { rootMargin: `-${Math.round(window.innerHeight * .2)}px 0px -${Math.round(window.innerHeight * .7)}px 0px`, threshold: 0 });
       sections.forEach(({ id }) => {
         const section = document.getElementById(id);
-        if (section && section.getBoundingClientRect().top <= marker) current = id;
+        if (section) observer.observe(section);
       });
-      const height = document.documentElement.scrollHeight;
-      if (height > window.innerHeight && window.scrollY + window.innerHeight >= height - 2) current = 'contact';
-      setActive(current);
     };
-    const schedule = () => {
-      if (frame === null) frame = window.requestAnimationFrame(update);
-    };
-    schedule();
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    return () => {
-      window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      if (frame !== null) window.cancelAnimationFrame(frame);
-    };
+    observe();
+    window.addEventListener('resize', observe);
+    return () => { observer.disconnect(); window.removeEventListener('resize', observe); };
   }, []);
 
   const closeOnEscape = event => {
@@ -60,7 +50,7 @@ const Sidebar = ({ theme, switchTheme }) => {
     <>
       <aside className={toggle ? 'aside show-menu' : 'aside'} onKeyDown={closeOnEscape}>
         <a href="#home" className="nav__logo" aria-label="Back to home" onClick={() => showMenu(false)}>
-          <img src={LightLogo} alt="" />
+          <span className="nav__monogram">bc<span aria-hidden="true">✧</span></span>
         </a>
         <nav className="nav" aria-label="Main navigation" id="main-navigation">
           <ul className="nav__list">
@@ -83,10 +73,14 @@ const Sidebar = ({ theme, switchTheme }) => {
           </button>
         </div>
       </aside>
-      <button ref={menuButton} aria-label="Toggle navigation" aria-expanded={toggle} aria-controls="main-navigation"
-        className={toggle ? 'nav__toggle nav__toggle-open' : 'nav__toggle'} onClick={() => showMenu(!toggle)} onKeyDown={closeOnEscape}>
-        <RiMenu2Line aria-hidden="true" />
-      </button>
+      <header className="mobile-header">
+        <a href="#home" className="mobile-header__name">Bhumika Chopra <span aria-hidden="true">✧</span></a>
+        <button ref={menuButton} aria-label="Toggle navigation" aria-expanded={toggle} aria-controls="main-navigation"
+          className="nav__toggle" onClick={() => showMenu(!toggle)} onKeyDown={closeOnEscape}>
+          <RiMenu2Line aria-hidden="true" />
+        </button>
+      </header>
+
     </>
   );
 };
