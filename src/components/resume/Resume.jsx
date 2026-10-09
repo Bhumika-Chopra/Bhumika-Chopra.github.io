@@ -1,56 +1,27 @@
-import React, { useState } from "react";
-import "./Resume.css";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Button from "./Button";
-
-import WorkExperience from "./WorkExperience";
-
-const Resume = () => {
-    const [tabIndex, setTabIndex] = useState(0);
-
-    return (
-        <section className="resume container section" id="resume">
-            <h2 className="section__title">Experience & Education</h2>
-
-            <div className="resume__container">
-                <Tabs
-                    className="tabs"
-                    selectedIndex={tabIndex}
-                    onSelect={(index) => setTabIndex(index)}
-                    selectedTabClassName={"is-active"}
-                    selectedTabPanelClassName={"is-active"}
-                >
-                    <TabList className="tab__list">
-                        {WorkExperience.map((experience, index) => {
-                            const { id, company } = experience;
-                            return (
-                                <Tab className="tab" key={`company-${id}`}>
-                                    <Button>{company}</Button>
-                                </Tab>
-                            );
-                        })}
-                    </TabList>
-
-                    {WorkExperience.map((experience) => {
-                        const { id, company, yearsActive, title, information } = experience;
-                        return (
-                            <TabPanel className="tab__panel" key={`panel-${id}`}>
-                                <h2 className="tab__panel-title">
-                                    {title} @ {company}
-                                </h2>
-                                <p className="tab__panel-subtitle">{yearsActive}</p>
-                                <ul className="tab__panel-list">
-                                    {information.map((info, index) => {
-                                        return <li key={`info-${index}`}>{info}</li>;
-                                    })}
-                                </ul>
-                            </TabPanel>
-                        );
-                    })}
-                </Tabs>
-            </div>
-        </section>
-    );
-};
-
+import React from 'react';
+import './Resume.css';
+import { Experience, Education } from './WorkExperience';
+const Timeline = ({ title, entries, symbol }) => (
+  <section className="resume__column" aria-label={title}>
+    <h2 className="resume__heading"><span aria-hidden="true">{symbol}</span> {title}</h2>
+    <ol className="resume__timeline">
+      {entries.map(({ company, title, note, description, url }) => (
+        <li className="resume__entry" key={company}>
+          <span className="resume__note">{note}</span>
+          <h3>{url ? <a href={url}>{company} ↗</a> : company}</h3>
+          <p className="resume__role">{title}</p>
+          <p>{description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+);
+const Resume = () => (
+  <section className="resume container section" id="resume">
+    <div className="resume__columns">
+      <Timeline title="Experience" entries={Experience} symbol="↗" />
+      <Timeline title="Education" entries={Education} symbol="✧" />
+    </div>
+  </section>
+);
 export default Resume;

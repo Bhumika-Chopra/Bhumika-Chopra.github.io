@@ -1,49 +1,33 @@
-# Hi, I'm Bhumika Chopra
+<div align="center">
 
-**MS in Computer Science at Georgia Tech · Systems for Machine Learning**
+# hi, i'm bhumika 🐈‍⬛
 
-I build and explore systems that make machine learning efficient. My interests span **SysML, CUDA, distributed systems, and ML inference optimization**.
+*usually down a systems rabbit hole. occasionally under a pile of books.*
 
-[Website](https://bhumika-chopra.github.io/) · [LinkedIn](https://www.linkedin.com/in/bhumika-chopra-740717165/) · [Email](mailto:bhumika.chicago@gmail.com)
+<img src="assets/cat-lab.svg" alt="A sleepy cat keeping watch over the midnight systems notebook" width="900" />
 
-## What I'm working on
+[my little website](https://bhumika-chopra.github.io/) · [linkedin](https://www.linkedin.com/in/bhumika-chopra-740717165/) · [say hello](mailto:bhumika.chicago@gmail.com)
 
-- **Setu:** contributing to a global tensor exchange for distributed deep learning workloads. [My fork](https://github.com/Bhumika-Chopra/setu) · [Upstream project](https://github.com/project-vajra/setu)
-- **Currently:** interning at a startup in the machine learning inference domain.
-- **Graduate study:** pursuing an MS in Computer Science at Georgia Tech, with a focus on systems for ML.
+</div>
 
-## Experience
+### currently in the notebook ✧
 
-| Organization | Work |
-| --- | --- |
-| Startup | Current internship in machine learning inference |
-| AWS | SDE internship building AI/LLM agents |
-| Maven Securities | Software engineering on options pricing, low latency systems, and volatility models; left to pursue my MSCS |
-| IIT Delhi | Background in mathematics and computer science |
+Somewhere between grad school and “wait, why is this slow?”, you'll find me pursuing my **MSCS at Georgia Tech** and interning at **[Avartha](https://avartha.ai/)**.
 
-## Languages & tools
+My favourite rabbit holes are **serving systems & SysML**. There's something very satisfying about all the little moving parts behind a model finally getting along.
 
-**C++ · Python · C · C# · Java · Julia · AWS**
+### a few things the cat hasn't knocked off the desk
 
-Current technical interests: **CUDA · GPU programming · distributed systems · inference optimization**.
+- 🧶 **[Setu](https://github.com/Bhumika-Chopra/setu)** — my recent contribution to distributed tensor exchange. Lots of moving pieces; that's the fun part. [Upstream](https://github.com/project-vajra/setu).
+- 🐾 **[NanoGPT](https://github.com/Bhumika-Chopra/NanoGPT)** — a GPT-from-scratch detour, one token at a time.
+- 🔎 **[Compiler Fault Localization](https://github.com/Bhumika-Chopra/CS-6390-PL-Fault-Localization)** — following ASTs and compiler clues into code complexity hotspots.
 
-## Selected public projects
+### things within paw's reach
 
-| Project | Focus |
-| --- | --- |
-| [Setu contribution](https://github.com/Bhumika-Chopra/setu) | Distributed tensor exchange; fork of the upstream project |
-| [NanoGPT](https://github.com/Bhumika-Chopra/NanoGPT) | Building GPT from scratch |
-| [Political Bias Detection in News](https://github.com/Bhumika-Chopra/CS-7641-Political-Bias-Detection-in-News) | Georgia Tech CS 7641 ML group project |
-| [Compiler Fault Localization](https://github.com/Bhumika-Chopra/CS-6390-PL-Fault-Localization) | Code complexity hotspots using AST and compiler feedback |
-| [Neural Image Denoising](https://github.com/Bhumika-Chopra/BTP) | Deep neural network approximation |
+```text
+languages   C++ · Python · C · C# · Java · Julia
+curiosity   serving systems · SysML
+off-screen  novels · mentoring · “just one more chapter”
+```
 
-## GitHub activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Bhumika-Chopra&show_icons=true&hide_border=true&bg_color=0b0f19&title_color=e5e7eb&text_color=9ca3af&icon_color=93b4f4" />
-  <img alt="Bhumika's GitHub contribution statistics" src="https://github-readme-stats.vercel.app/api?username=Bhumika-Chopra&show_icons=true&hide_border=true&bg_color=f8fafc&title_color=111827&text_color=475569&icon_color=315fa8" />
-</picture>
-
-[Explore my repositories](https://github.com/Bhumika-Chopra?tab=repositories) · [View my contribution history](https://github.com/Bhumika-Chopra)
-
-<sub>Statistics are provided by an external service and may occasionally be unavailable.</sub>
+A good book recommendation or a conversation about systems is always welcome. The cat may supervise. 🐈

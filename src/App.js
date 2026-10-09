@@ -7,7 +7,8 @@ import Resume from './components/resume/Resume';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
 import useLocalStorage from 'use-local-storage';
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useRef } from 'react';
+import { flushSync } from 'react-dom';
 
 
 function App() {
@@ -18,10 +19,17 @@ function App() {
         document.documentElement.dataset.theme = theme;
     }, [theme]);
 
+    const themeTransition = useRef(null);
     const switchTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-    }
+        const update = () => flushSync(() => setTheme(theme === 'light' ? 'dark' : 'light'));
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (document.startViewTransition && !reduceMotion) {
+            themeTransition.current?.skipTransition();
+            themeTransition.current = document.startViewTransition(update);
+        } else {
+            update();
+        }
+    };
 
     return (
         <div className="app">

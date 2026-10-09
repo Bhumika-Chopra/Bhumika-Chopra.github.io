@@ -188,20 +188,23 @@ img {
   animation: button-push 0.3s linear 1;
 }
 
-/* Theme changes share one duration across surfaces, text and interactive states. */
-html, body, .app, main, aside, button, input, textarea, a, h1, h2, h3,
-span, p, li, svg, path, rect, .nav__toggle, .about__data, .about__data::before,
-.tab__panel, .portfolio__card, .portfolio__category, .section__title::before {
-  transition: background-color var(--motion), color var(--motion), border-color var(--motion),
-    box-shadow var(--motion), fill var(--motion), stroke var(--motion),
-    opacity var(--motion), transform var(--motion), left var(--motion);
-}
+
+/* Colors change atomically; the browser blends whole-page snapshots on theme switches. */
 body, .app { background-color: var(--body-color); color: var(--text-color); }
-html { color-scheme: light; }
+html { color-scheme: light; scroll-padding-top: 2rem; }
 a { color: var(--first-color); }
 :focus-visible { outline: 2px solid var(--first-color); outline-offset: 5px; }
 input::placeholder, textarea::placeholder { color: var(--muted-color); opacity: 1; }
-.btn:hover { animation: none; transform: translateY(-2px); }
+.btn { transition: transform 240ms cubic-bezier(.2,.8,.2,1), box-shadow 240ms ease; }
+.btn:hover { animation: none; transform: translateY(-3px); box-shadow: var(--shadow); }
+::view-transition-old(root) { animation: theme-out 420ms ease both; }
+::view-transition-new(root) { animation: theme-in 420ms ease both; }
+@keyframes theme-out { to { opacity: 0; } }
+@keyframes theme-in { from { opacity: 0; } }
+.section__title::before { background: none; content: '✧'; color: var(--first-color); font-size: 2rem; top: -1.1rem; }
+[data-theme="dark"] .section__title::before { background: none; }
+.section__title { margin-bottom: 2.75rem; letter-spacing: -.035em; }
+.section { padding-top: 6rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

@@ -32,3 +32,36 @@ test('saved theme is restored and Setu is the first accessible project', () => {
   fireEvent.click(screen.getByRole('link', { name: 'Projects' }));
   expect(screen.getByRole('button', { name: 'Toggle navigation' })).toHaveAttribute('aria-expanded', 'false');
 });
+
+test('career columns contain only the requested entries and projects stay at six', () => {
+  const { container } = render(<App />);
+  const columns = container.querySelectorAll('.resume__column');
+  expect(columns).toHaveLength(2);
+  expect(columns[0].querySelectorAll('.resume__entry')).toHaveLength(3);
+  expect(columns[1].querySelectorAll('.resume__entry')).toHaveLength(2);
+  expect(columns[0]).toHaveTextContent('Avartha');
+  expect(columns[0]).toHaveTextContent('Amazon');
+  expect(columns[0]).toHaveTextContent('Maven Securities');
+  expect(columns[1]).toHaveTextContent('Georgia Tech');
+  expect(columns[1]).toHaveTextContent('IIT Delhi');
+  expect(container.querySelectorAll('.portfolio__card')).toHaveLength(6);
+  expect(container).not.toHaveTextContent('CUDA');
+  const reveal = screen.getByRole('button', { name: 'Show details for Setu · Distributed Tensor Exchange' });
+  fireEvent.click(reveal);
+  expect(reveal).toHaveAttribute('aria-expanded', 'true');
+  fireEvent.click(reveal);
+  expect(reveal).toHaveAttribute('aria-expanded', 'false');
+});
+
+test('theme uses a whole-page transition when available and respects reduced motion', () => {
+  document.startViewTransition = jest.fn(callback => { callback(); return { skipTransition: jest.fn() }; });
+  render(<App />);
+  fireEvent.click(screen.getByRole('button', { name: 'Switch to dark theme' }));
+  expect(document.startViewTransition).toHaveBeenCalledTimes(1);
+  expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+  window.matchMedia.mockReturnValue({ matches: true });
+  fireEvent.click(screen.getByRole('button', { name: 'Switch to light theme' }));
+  expect(document.startViewTransition).toHaveBeenCalledTimes(1);
+  expect(document.documentElement).toHaveAttribute('data-theme', 'light');
+  delete document.startViewTransition;
+});

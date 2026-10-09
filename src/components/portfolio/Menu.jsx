@@ -1,13 +1,14 @@
-// Public GitHub repository snapshot; refresh with npm run sync:projects.
+// Six selected projects; Setu stays first.
 const Menu = [
   {
     "id": 1,
-    "title": "Setu \u00b7 Distributed Tensor Exchange",
-    "description": "My recent contribution to a distributed tensor exchange project. Public fork of the upstream Setu repository.",
+    "title": "Setu · Distributed Tensor Exchange",
+    "description": "A recent contribution to a global tensor exchange for distributed deep learning workloads. My fork of the upstream Setu project.",
     "category": [
       "C++"
     ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/setu"
+    "repositoryUrl": "https://github.com/Bhumika-Chopra/setu",
+    "image": "/project-art/setu.svg"
   },
   {
     "id": 2,
@@ -16,7 +17,8 @@ const Menu = [
     "category": [
       "Jupyter Notebook"
     ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/NanoGPT"
+    "repositoryUrl": "https://github.com/Bhumika-Chopra/NanoGPT",
+    "image": "/project-art/nanogpt.svg"
   },
   {
     "id": 3,
@@ -25,7 +27,8 @@ const Menu = [
     "category": [
       "Jupyter Notebook"
     ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/CS-7641-Political-Bias-Detection-in-News"
+    "repositoryUrl": "https://github.com/Bhumika-Chopra/CS-7641-Political-Bias-Detection-in-News",
+    "image": "/project-art/news.svg"
   },
   {
     "id": 4,
@@ -34,7 +37,8 @@ const Menu = [
     "category": [
       "C++"
     ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/CS-6390-PL-Fault-Localization"
+    "repositoryUrl": "https://github.com/Bhumika-Chopra/CS-6390-PL-Fault-Localization",
+    "image": "/project-art/compiler.svg"
   },
   {
     "id": 5,
@@ -43,43 +47,18 @@ const Menu = [
     "category": [
       "Jupyter Notebook"
     ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/BTP"
+    "repositoryUrl": "https://github.com/Bhumika-Chopra/BTP",
+    "image": "/project-art/denoising.png"
   },
   {
     "id": 6,
-    "title": "Parkinson\u2019s Disease Classification",
+    "title": "Parkinson’s Disease Classification",
     "description": "A public machine learning classification project.",
     "category": [
       "Jupyter Notebook"
     ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/Parkinsons-disease-Classification"
-  },
-  {
-    "id": 7,
-    "title": "Memory Manager",
-    "description": "A systems project implemented in C.",
-    "category": [
-      "C"
-    ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/Memory-Manager"
-  },
-  {
-    "id": 8,
-    "title": "Read\u2013Write Locks",
-    "description": "A concurrency project implemented in C.",
-    "category": [
-      "C"
-    ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/Read-Write-Locks"
-  },
-  {
-    "id": 9,
-    "title": "Information Retrieval",
-    "description": "COL764 information retrieval assignment implemented in Python.",
-    "category": [
-      "Python"
-    ],
-    "repositoryUrl": "https://github.com/Bhumika-Chopra/Information-Retrieval-A1"
+    "repositoryUrl": "https://github.com/Bhumika-Chopra/Parkinsons-disease-Classification",
+    "image": "/project-art/parkinsons.png"
   }
 ];
 export default Menu;

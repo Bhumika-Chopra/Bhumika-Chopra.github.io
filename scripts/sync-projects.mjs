@@ -8,15 +8,10 @@ const response = await fetch('https://api.github.com/users/Bhumika-Chopra/repos?
 });
 if (!response.ok) throw new Error(`GitHub returned ${response.status}; existing projects were preserved.`);
 const repos = await response.json();
-const known = new Set(projects.map(project => project.repositoryUrl));
-const additions = repos.filter(repo => !repo.fork && !repo.archived && repo.description && repo.language && !known.has(repo.html_url) && !['Bhumika-Chopra', 'Bhumika-Chopra.github.io'].includes(repo.name));
-for (const repo of additions) {
-  projects.push({ id: projects.length + 1, title: repo.name, description: repo.description, category: [repo.language], repositoryUrl: repo.html_url });
-}
 for (const project of projects) {
   const repo = repos.find(repo => repo.html_url === project.repositoryUrl);
   if (!repo) throw new Error(`Selected repository missing: ${project.repositoryUrl}. Review before removing it.`);
   project.category = [repo.language || 'Project'];
 }
-await writeFile(file, '// Public GitHub repository snapshot; refresh with npm run sync:projects.\nconst Menu = ' + JSON.stringify(projects, null, 2) + ';\nexport default Menu;\n');
-console.log(`Updated ${projects.length} projects; Setu remains first. Review new entries before publishing.`);
+await writeFile(file, '// Six selected projects; Setu stays first.\nconst Menu = ' + JSON.stringify(projects, null, 2) + ';\nexport default Menu;\n');
+console.log(`Updated ${projects.length} projects; Setu remains first. Curated selection preserved.`);
