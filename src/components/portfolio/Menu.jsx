@@ -48,7 +48,7 @@ const Menu = [
       "Jupyter Notebook"
     ],
     "repositoryUrl": "https://github.com/Bhumika-Chopra/BTP",
-    "image": "/project-art/denoising.png"
+    "image": "/project-art/denoising.svg"
   },
   {
     "id": 6,
@@ -58,7 +58,7 @@ const Menu = [
       "Jupyter Notebook"
     ],
     "repositoryUrl": "https://github.com/Bhumika-Chopra/Parkinsons-disease-Classification",
-    "image": "/project-art/parkinsons.png"
+    "image": "/project-art/parkinsons.svg"
   }
 ];
 export default Menu;
