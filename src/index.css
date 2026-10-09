@@ -2,16 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  /*=============== Colors ===============*/
-  --first-color: hsl(353, 100%, 65%);
-  --title-color: hsl(244, 100%, 26%);
-  --text-color: hsl(244, 16%, 43%);
-  --body-color: hsl(258, 60%, 98%);
-  --container-color: #fff;
-  --border-color: rgba(0, 0, 0, 0.05);
+  --first-color: #315fa8;
+  --title-color: #111827;
+  --text-color: #475569;
+  --body-color: #f8fafc;
+  --container-color: #ffffff;
+  --border-color: #dbe3ee;
+  --muted-color: #64748b;
+  --surface-color: #eef2f7;
+  --button-text: #ffffff;
+  --motion: 0.3s ease;
 
   /*=============== Font and Typohraphy ===============*/
-  --body-font: "Noto Sans", san-serif;
+  --body-font: "Noto Sans", sans-serif;
   --h1-font-size: 2.25rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
@@ -32,14 +35,17 @@
 }
 
 [data-theme="dark"] {
-  --first-color: hsl(353, 100%, 65%);
-  --title-color: hsl(218, 11%, 69%);
-  --text-color: hsl(0, 0%, 100%);
-  --body-color: hsl(0, 0%, 12.5%);
-  --container-color: hsl(0, 0%, 22%);
-
-  --shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
-  --border-color: rgba(167, 174, 185, 0.1);
+  color-scheme: dark;
+  --first-color: #93b4f4;
+  --title-color: #e5e7eb;
+  --text-color: #cbd5e1;
+  --body-color: #0b0f19;
+  --container-color: #111827;
+  --surface-color: #1f2937;
+  --muted-color: #9ca3af;
+  --border-color: #374151;
+  --button-text: #0b0f19;
+  --shadow: 0 5px 20px rgb(0 0 0 / 20%);
 }
 
 /*=============== Responsive Typohraphy ===============*/
@@ -162,7 +168,7 @@ img {
   border-radius: 1.875rem;
   box-shadow: 0 0 1px rgb(0 0 0 / 0%);
   border: 1px solid transparent;
-  color: #fff;
+  color: var(--button-text);
   display: inline-block;
   background-color: var(--first-color);
   font-weight: var(--font-bold);
@@ -180,4 +186,23 @@ img {
 
 .btn:hover {
   animation: button-push 0.3s linear 1;
+}
+
+/* Theme changes share one duration across surfaces, text and interactive states. */
+html, body, .app, main, aside, button, input, textarea, a, h1, h2, h3,
+span, p, li, svg, path, rect, .nav__toggle, .about__data, .about__data::before,
+.tab__panel, .portfolio__card, .portfolio__category, .section__title::before {
+  transition: background-color var(--motion), color var(--motion), border-color var(--motion),
+    box-shadow var(--motion), fill var(--motion), stroke var(--motion),
+    opacity var(--motion), transform var(--motion), left var(--motion);
+}
+body, .app { background-color: var(--body-color); color: var(--text-color); }
+html { color-scheme: light; }
+a { color: var(--first-color); }
+:focus-visible { outline: 2px solid var(--first-color); outline-offset: 5px; }
+input::placeholder, textarea::placeholder { color: var(--muted-color); opacity: 1; }
+.btn:hover { animation: none; transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }

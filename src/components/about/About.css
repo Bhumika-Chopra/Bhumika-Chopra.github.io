@@ -180,3 +180,8 @@
     align-items: center;
   }
 }
+
+.about__description { text-align: left; }
+.about__title { font-size: 1.1rem; }
+@media (max-width: 1024px) { .about__container { grid-template-columns: minmax(0, 720px); } }
+@media (max-width: 768px) { .about__boxes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

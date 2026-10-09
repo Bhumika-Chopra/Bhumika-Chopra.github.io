@@ -28,7 +28,7 @@ aside {
 }
 
 .nav__link:hover {
-  color: hsl(43, 100%, 68%);
+  color: var(--first-color);
 }
 
 .footer__button {
@@ -84,3 +84,6 @@ aside {
     left: 0;
   }
 }
+
+.nav__toggle { color: var(--title-color); }
+@media (min-width: 1025px) { .nav__toggle { display: none; } }

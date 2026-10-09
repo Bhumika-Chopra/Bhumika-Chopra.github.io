@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";  // Assuming you have your CSS for theming
-import Image from "../../assets/avatar-2.svg"
+
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -31,9 +31,9 @@ const Contact = () => {
 
             <div className="contact__container grid">
                 <div className="contact__info">
-                    <h3 className="contact__title">Let's talk about everything!</h3>
+                    <h3 className="contact__title">Let's talk systems & ML.</h3>
                     <p className="contact__details">
-                        Don't like forms? Send me an email. 👋
+                        <a href="mailto:bhumika.chicago@gmail.com">Send me an email</a> or use the form to open a draft in your email app.
                     </p>
                 </div>
 
@@ -43,7 +43,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 className="contact__form-input"
-                                placeholder="Insert your name"
+                                aria-label="Your name" required placeholder="Your name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                             />
@@ -53,7 +53,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 className="contact__form-input"
-                                placeholder="Insert your email"
+                                aria-label="Your email" required placeholder="Your email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
@@ -64,7 +64,7 @@ const Contact = () => {
                         <input
                             type="text"
                             className="contact__form-input"
-                            placeholder="Insert your subject"
+                            aria-label="Your subject" required placeholder="Your subject"
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
                         />
@@ -77,7 +77,7 @@ const Contact = () => {
                             cols="30"
                             rows="10"
                             className="contact__form-input"
-                            placeholder="Write your message"
+                            aria-label="Your message" required placeholder="Write your message"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         ></textarea>

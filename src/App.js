@@ -6,12 +6,17 @@ import About from './components/about/About';
 import Resume from './components/resume/Resume';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
-import useLocalStorage from 'use-local-storage'
+import useLocalStorage from 'use-local-storage';
+import { useLayoutEffect } from 'react';
 
 
 function App() {
     const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+
+    useLayoutEffect(() => {
+        document.documentElement.dataset.theme = theme;
+    }, [theme]);
 
     const switchTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -19,14 +24,14 @@ function App() {
     }
 
     return (
-        <div className="app" data-theme={theme}>
+        <div className="app">
             <Sidebar theme={theme} switchTheme={switchTheme} />
             <main className='main'>
                 <Home />
                 <About />
                 <Resume />
                 <Portfolio />
-                <Contact theme={theme} />
+                <Contact />
             </main>
         </div>
     );

@@ -1,9 +1,25 @@
 const WorkExperience = [
     {
+        id: 4, title: "ML Inference Intern", company: "Startup", yearsActive: "Current internship",
+        information: ["Interning at a startup in the machine learning inference domain."]
+    },
+    {
+        id: 5, title: "SDE Intern", company: "AWS", yearsActive: "Internship",
+        information: ["Built AI/LLM agents during a software development engineering internship."]
+    },
+    {
+        id: 6, title: "MS in Computer Science", company: "Georgia Tech", yearsActive: "Current graduate studies",
+        information: ["Left Maven Securities to pursue an MS in Computer Science.", "Focus: systems for machine learning, CUDA, distributed systems, and ML inference optimization."]
+    },
+    {
+        id: 7, title: "Mathematics & Computer Science", company: "IIT Delhi", yearsActive: "Undergraduate studies",
+        information: ["Foundation in mathematics and computer science."]
+    },
+    {
         id: 1,
         title: "Software Engineer",
         company: "Maven Securities",
-        yearsActive: "June 2022 - Present",
+        yearsActive: "Previous role · before Georgia Tech",
         information: [
             "Contributed to an event-based options volatility fitter using an underlying Extended Kalman Filter. Made improvements to support internal pricing and error minimization computation.",
             "Contributed to an offset fitter reliant on European options call-put parity using least squares linear regression and Kalman filtering. Enhanced robustness and added submission throttling to downstream applications.",

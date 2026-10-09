@@ -2,9 +2,9 @@ import React from 'react'
 
 const Button = ({ children }) => {
     return (
-        <button className="button">
+        <span className="button">
             {children}
-        </button>
+        </span>
     )
 }
 
