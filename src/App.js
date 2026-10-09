@@ -6,6 +6,8 @@ import About from './components/about/About';
 import Resume from './components/resume/Resume';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
+import Reading from './components/reading/Reading';
+import Footer from './components/footer/Footer';
 import useLocalStorage from 'use-local-storage';
 import { useLayoutEffect, useRef } from 'react';
 import { flushSync } from 'react-dom';
@@ -39,7 +41,9 @@ function App() {
                 <About />
                 <Resume />
                 <Portfolio />
+                <Reading />
                 <Contact />
+                <Footer />
             </main>
         </div>
     );

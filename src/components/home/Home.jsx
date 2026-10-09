@@ -14,6 +14,7 @@ const Home = () => {
                 <h1 className="home__name">Bhumika Chopra</h1>
                 <span className="home__education">MS Computer Science · Georgia Tech</span>
 
+                <p className="home__tagline">Exploring the systems behind fast, reliable inference.</p>
                 <p className="home__focus">Serving systems · SysML</p>
                 <HeaderSocials />
 

@@ -167,3 +167,5 @@
 .home__focus { font-family: monospace; color: var(--first-color); }
 .intro { max-width: 650px; padding: 5rem 0; }
 .shapes { pointer-events: none; opacity: .45; }
+
+.home__tagline { max-width: 480px; margin: 1.2rem auto .6rem; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: balance; }

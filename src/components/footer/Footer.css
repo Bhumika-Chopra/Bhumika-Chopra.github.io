@@ -1,0 +1,8 @@
+.site-footer { display: flex; align-items: center; gap: 1.25rem; padding-top: 1.5rem; padding-bottom: 2.5rem; border-top: 1px solid var(--border-color); }
+.site-footer__cat { width: 95px; flex-shrink: 0; color: var(--first-color); }
+.site-footer p { font-size: .9rem; color: var(--title-color); }
+.site-footer span { color: var(--muted-color); font-size: .75rem; }
+.site-footer > a { margin-left: auto; font-size: .8rem; white-space: nowrap; }
+.cat-tail { transform-origin: 108px 68px; transition: transform 400ms ease; }
+.site-footer:hover .cat-tail { transform: rotate(-8deg); }
+@media (max-width: 600px) { .site-footer { flex-wrap: wrap; gap: .7rem; } .site-footer__cat { width: 75px; } .site-footer > a { flex-basis: 100%; margin: 0; text-align: center; } }
